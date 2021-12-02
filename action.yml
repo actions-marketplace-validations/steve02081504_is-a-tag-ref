@@ -1,0 +1,18 @@
+name: 'is-a-tag-ref'
+description: Wouldn't you like to know if it's all in a tag push?
+
+inputs:
+  ref:
+    description: 'ref'
+    default: ${{ github.ref }}
+    required: true
+outputs:
+  result:
+    description: "result"
+    value: ${{ steps.judgment.outputs.result }}
+runs:
+  using: "composite"
+  steps:
+    - id: judgment
+      run: echo "::set-output name=result::${{ startsWith(inputs.ref, 'refs/tags/') }}"
+      shell: pwsh
