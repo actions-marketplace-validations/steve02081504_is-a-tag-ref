@@ -1,5 +1,8 @@
 name: 'is-a-tag-ref'
 description: Wouldn't you like to know if it's all in a tag push?
+branding:
+  icon: 'arrow-right-circle'
+  color: 'gray-dark'
 
 inputs:
   ref:
